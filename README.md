@@ -97,3 +97,5 @@ December 2025
 ## Some Photos
 <img width="1915" height="915" alt="image" src="https://github.com/user-attachments/assets/06dd9c65-59bd-409b-a039-dfe2dc41fb4a" />
 <img width="1918" height="1079" alt="image" src="https://github.com/user-attachments/assets/73a4c0d7-306e-4a79-bda6-c62429063533" />
+<img width="1914" height="385" alt="image" src="https://github.com/user-attachments/assets/e30ffbb3-3428-4e14-9dab-b39a7abf3214" />
+
