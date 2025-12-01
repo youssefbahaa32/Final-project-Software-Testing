@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="OpenCart Complete Test Suite" parallel="false" thread-count="1">
+    
+    <!-- Customer-Facing Tests -->
+    <test name="Account Management Tests">
+        <classes>
+            <class name="UserStory_AccountManagement.Tests.RegistrationTests"/>
+            <class name="UserStory_AccountManagement.Tests.LoginTests"/>
+        </classes>
+    </test>
+    
+    <test name="Product Browsing Tests">
+        <classes>
+            <class name="UserStory_ProductBrowsing.Tests.SearchTests"/>
+            <class name="UserStory_ProductBrowsing.Tests.CategoryTests"/>
+        </classes>
+    </test>
+    
+    <test name="Shopping Cart Tests">
+        <classes>
+            <class name="UserStory_ShoppingCart_Checkout.Tests.CartTests"/>
+        </classes>
+    </test>
+    
+    <test name="Checkout Tests">
+        <classes>
+            <class name="UserStory_ShoppingCart_Checkout.Tests.CheckoutTests"/>
+        </classes>
+    </test>
+    
+    <test name="Order Management Tests">
+        <classes>
+            <class name="UserStory_OrderManagement.Tests.OrderManagementTests"/>
+        </classes>
+    </test>
+    
+    <test name="Rewards Tests">
+        <classes>
+            <class name="UserStory_Rewards.Tests.RewardsTests"/>
+            <class name="UserStory_Rewards.Tests.AffiliateTests"/>
+        </classes>
+    </test>
+    
+    <test name="Content Tests">
+        <classes>
+            <class name="UserStory_Content.Tests.ContentTests"/>
+        </classes>
+    </test>
+    
+    <test name="Localization Tests">
+        <classes>
+            <class name="UserStory_Localization.Tests.LocalizationTests"/>
+        </classes>
+    </test>
+    
+    <!-- Admin Tests -->
+    <test name="Dashboard Tests">
+        <classes>
+            <class name="UserStory_Dashboard.Tests.DashboardTests"/>
+        </classes>
+    </test>
+    
+    <test name="Catalog Tests">
+        <classes>
+            <class name="UserStory_Catalog.Tests.CatalogTests"/>
+        </classes>
+    </test>
+    
+    <test name="Sales Tests">
+        <classes>
+            <class name="UserStory_Sales.Tests.SalesTests"/>
+        </classes>
+    </test>
+    
+    <test name="Customer Management Tests">
+        <classes>
+            <class name="UserStory_Customer.Tests.CustomerTests"/>
+        </classes>
+    </test>
+    
+    <test name="Marketing Tests">
+        <classes>
+            <class name="UserStory_Marketing.Tests.MarketingTests"/>
+        </classes>
+    </test>
+    
+    <test name="Design Tests">
+        <classes>
+            <class name="UserStory_Design.Tests.DesignTests"/>
+        </classes>
+    </test>
+    
+    <test name="System Tests">
+        <classes>
+            <class name="UserStory_System.Tests.SystemTests"/>
+        </classes>
+    </test>
+    
+    <test name="User Management Tests">
+        <classes>
+            <class name="UserStory_User_Management.Tests.UserManagementTests"/>
+        </classes>
+    </test>
+    
+</suite>
