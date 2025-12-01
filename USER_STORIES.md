@@ -3,8 +3,6 @@
 ## Table of Contents
 1. [Customer User Stories](#customer-user-stories)
 2. [Store Administrator User Stories](#store-administrator-user-stories)
-3. [System User Stories](#system-user-stories)
-4. [API User Stories](#api-user-stories)
 
 ---
 
@@ -430,3 +428,4 @@
 - As an admin, I want to set API permissions so that external systems have limited access
 - As an admin, I want to view API usage so that I can monitor activity
 - As an admin, I want to revoke API access so that I can disable compromised keys
+
