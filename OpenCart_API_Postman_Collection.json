@@ -1,0 +1,396 @@
+{
+  "info": {
+    "name": "OpenCart Demo \u2013 API Tests",
+    "_postman_id": "b1f3d7b6-0b6d-4c8d-b9e4-oc-demo",
+    "description": "Postman collection for OpenCart built-in API (requires enabling API user, API key and IP whitelist from Admin). Endpoints and payloads may vary by OpenCart version.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "01-Login (get token)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}index.php?route=api/login",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "index.php"
+          ],
+          "query": [
+            {
+              "key": "route",
+              "value": "api/login"
+            }
+          ]
+        },
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "key",
+              "value": "{{apiKey}}",
+              "type": "text"
+            }
+          ]
+        },
+        "description": "Requires API key generated in Admin \u2192 System \u2192 Users \u2192 API and whitelisted IP."
+      },
+      "response": [],
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "let json = {};",
+              "try { json = pm.response.json(); } catch(e) {}",
+              "if (json && json.api_token) {",
+              "  pm.environment.set('api_token', json.api_token);",
+              "} else if (json && json.token) {",
+              "  pm.environment.set('api_token', json.token);",
+              "}",
+              "pm.test('Status is 200', function(){ pm.response.to.have.status(200); });"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ]
+    },
+    {
+      "name": "02-Add to Cart",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}index.php?route=api/cart/add&api_token={{api_token}}",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "index.php"
+          ],
+          "query": [
+            {
+              "key": "route",
+              "value": "api/cart/add"
+            },
+            {
+              "key": "api_token",
+              "value": "{{api_token}}"
+            }
+          ]
+        },
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "product_id",
+              "value": "{{product_id}}",
+              "type": "text"
+            },
+            {
+              "key": "quantity",
+              "value": "1",
+              "type": "text"
+            }
+          ]
+        },
+        "description": "Add product to cart using api_token from Login. Set a valid product_id from your store."
+      },
+      "response": []
+    },
+    {
+      "name": "03-Get Cart Products",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}index.php?route=api/cart/products&api_token={{api_token}}",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "index.php"
+          ],
+          "query": [
+            {
+              "key": "route",
+              "value": "api/cart/products"
+            },
+            {
+              "key": "api_token",
+              "value": "{{api_token}}"
+            }
+          ]
+        },
+        "description": "List cart products"
+      },
+      "response": []
+    },
+    {
+      "name": "04-Set Payment Address",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}index.php?route=api/payment/address&api_token={{api_token}}",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "index.php"
+          ],
+          "query": [
+            {
+              "key": "route",
+              "value": "api/payment/address"
+            },
+            {
+              "key": "api_token",
+              "value": "{{api_token}}"
+            }
+          ]
+        },
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "firstname",
+              "value": "Test"
+            },
+            {
+              "key": "lastname",
+              "value": "User"
+            },
+            {
+              "key": "address_1",
+              "value": "123 Test Street"
+            },
+            {
+              "key": "city",
+              "value": "Cairo"
+            },
+            {
+              "key": "postcode",
+              "value": "12345"
+            },
+            {
+              "key": "country_id",
+              "value": "222"
+            },
+            {
+              "key": "zone_id",
+              "value": "3579"
+            }
+          ]
+        },
+        "description": "Sets payment address (IDs depend on your dataset)."
+      },
+      "response": []
+    },
+    {
+      "name": "05-Set Shipping Address",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}index.php?route=api/shipping/address&api_token={{api_token}}",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "index.php"
+          ],
+          "query": [
+            {
+              "key": "route",
+              "value": "api/shipping/address"
+            },
+            {
+              "key": "api_token",
+              "value": "{{api_token}}"
+            }
+          ]
+        },
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "firstname",
+              "value": "Test"
+            },
+            {
+              "key": "lastname",
+              "value": "User"
+            },
+            {
+              "key": "address_1",
+              "value": "123 Test Street"
+            },
+            {
+              "key": "city",
+              "value": "Cairo"
+            },
+            {
+              "key": "postcode",
+              "value": "12345"
+            },
+            {
+              "key": "country_id",
+              "value": "222"
+            },
+            {
+              "key": "zone_id",
+              "value": "3579"
+            }
+          ]
+        },
+        "description": "Sets shipping address (same fields as payment)."
+      },
+      "response": []
+    },
+    {
+      "name": "06-Shipping Methods",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{baseUrl}}index.php?route=api/shipping/methods&api_token={{api_token}}",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "index.php"
+          ],
+          "query": [
+            {
+              "key": "route",
+              "value": "api/shipping/methods"
+            },
+            {
+              "key": "api_token",
+              "value": "{{api_token}}"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "07-Payment Methods",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{baseUrl}}index.php?route=api/payment/methods&api_token={{api_token}}",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "index.php"
+          ],
+          "query": [
+            {
+              "key": "route",
+              "value": "api/payment/methods"
+            },
+            {
+              "key": "api_token",
+              "value": "{{api_token}}"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "08-Create Order",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/x-www-form-urlencoded"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}index.php?route=api/order/add&api_token={{api_token}}",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "index.php"
+          ],
+          "query": [
+            {
+              "key": "route",
+              "value": "api/order/add"
+            },
+            {
+              "key": "api_token",
+              "value": "{{api_token}}"
+            }
+          ]
+        },
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "comment",
+              "value": "Order placed by API"
+            },
+            {
+              "key": "affiliate_id",
+              "value": "0"
+            },
+            {
+              "key": "order_status_id",
+              "value": "1"
+            }
+          ]
+        },
+        "description": "Creates an order from the current cart; requires addresses + methods to be set."
+      },
+      "response": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://demo.opencart.com/"
+    },
+    {
+      "key": "apiKey",
+      "value": "<PUT-YOUR-API-KEY>"
+    },
+    {
+      "key": "api_token",
+      "value": ""
+    },
+    {
+      "key": "product_id",
+      "value": "<PUT-VALID-PRODUCT-ID>"
+    }
+  ]
+}
