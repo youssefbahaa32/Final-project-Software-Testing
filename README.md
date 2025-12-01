@@ -19,7 +19,7 @@ Automated testing suite for **OpenCart 4.1.0.3** e-commerce platform. Final grad
 
 ## 🔗 Project Links
 
-**Jira Board:** [Add Your Jira Link Here]
+**Jira Board:** https://ahmedhegazy440.atlassian.net/jira/software/c/projects/QGD/summary?atlOrigin=eyJpIjoiMmFiZTBiM2Y0MjlkNDlhMjhmZmFmNGMwZmE5M2EzZTEiLCJwIjoiaiJ9
 
 **GitHub Repository:** https://github.com/youssefbahaa32/Final-project-Software-Testing
 
