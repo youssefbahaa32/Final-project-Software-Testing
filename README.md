@@ -21,7 +21,7 @@ Automated testing suite for **OpenCart 4.1.0.3** e-commerce platform. Final grad
 
 **Jira Board:** [Add Your Jira Link Here]
 
-**GitHub Repository:** [Your Repo Link]
+**GitHub Repository:** https://github.com/youssefbahaa32/Final-project-Software-Testing
 
 ---
 
@@ -94,3 +94,6 @@ Software Testing Track - Graduation Project
 December 2025
 
 ---
+## Some Photos
+<img width="1915" height="915" alt="image" src="https://github.com/user-attachments/assets/06dd9c65-59bd-409b-a039-dfe2dc41fb4a" />
+<img width="1918" height="1079" alt="image" src="https://github.com/user-attachments/assets/73a4c0d7-306e-4a79-bda6-c62429063533" />
