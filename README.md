@@ -1,13 +1,13 @@
 # OpenCart E-Commerce Testing - DEPI Graduation Project
 
-## 📋 Project Overview
+## Project Overview
 Automated testing suite for **OpenCart 4.1.0.3** e-commerce platform. Final graduation project for **Digital Egypt Pioneers Initiative (DEPI)** - Software Testing Track.
 
 **Test Coverage:** 135 automated test cases across 15 user stories
 
 ---
 
-## 👥 Team Members
+## Team Members
 - Ahmed Hegazy Mahrous Abd El Al
 - Steven Ezzat Halim
 - Ahmed Adel Mohamed
@@ -17,7 +17,7 @@ Automated testing suite for **OpenCart 4.1.0.3** e-commerce platform. Final grad
 
 ---
 
-## 🔗 Project Links
+## Project Links
 
 **Jira Board:** https://ahmedhegazy440.atlassian.net/jira/software/c/projects/QGD/summary?atlOrigin=eyJpIjoiMmFiZTBiM2Y0MjlkNDlhMjhmZmFmNGMwZmE5M2EzZTEiLCJwIjoiaiJ9
 
@@ -25,7 +25,7 @@ Automated testing suite for **OpenCart 4.1.0.3** e-commerce platform. Final grad
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 - **Java** + **Selenium WebDriver** + **TestNG**
 - **Cucumber** (BDD)
 - **Maven** (Build Tool)
@@ -35,7 +35,7 @@ Automated testing suite for **OpenCart 4.1.0.3** e-commerce platform. Final grad
 
 ---
 
-## 📊 Test Coverage
+## Test Coverage
 
 **UI Automation:** 135 test cases
 - Account Management (6)
@@ -54,7 +54,7 @@ Automated testing suite for **OpenCart 4.1.0.3** e-commerce platform. Final grad
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 - Java JDK 11+
@@ -68,7 +68,7 @@ Right-click `testng-all-tests.xml` → Run
 
 ---
 
-## 📁 Project Structure (Automation)
+## Project Structure (Automation)
 ```
 OpenCart_Automation/
 ├── src/test/java/
@@ -81,14 +81,14 @@ OpenCart_Automation/
 ```
 ---
 
-## 📚 Documentation
+## Documentation
 - `USER_STORIES.md` - User stories (Open Cart)
 - `TEST_PLAN.pdf` - The test plan pdf
 - `OPENCART_TESTCASES.md` - OC Test Cases
 
 ---
 
-## 🎓 DEPI Program
+## DEPI Program
 **Digital Egypt Pioneers Initiative**  
 Software Testing Track - Graduation Project  
 December 2025
